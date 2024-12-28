@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.frame {
+    height: 400px;
+    width: 400px;
+    background: linear-gradient(45deg, #43389f, #4ec6ca);
+    font-family: "Courier New", "Courier", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.days {
+    font-size: 6.6rem;
+    line-height: 80px;
+}
+.challenge {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 10px;
+}
+
+.numbers {
+    position: relative;
+    height: 120px;
+    width: 250px;
+}
+
+.one-p1,
+.one-p2 {
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.one-p1 {
+    height: 26px;
+    width: 60px;
+    background: #fff;
+    transform: translateX(-35px) translateY(16px) rotate(-50deg);
+    z-index: 14;
+    top: 0;
+    left: 10px;
+}
+.one-p2 {
+    height: 120px;
+    width: 30px;
+    background: #fff;
+    z-index: 15;
+    top: 0;
+    left: 10px;
+}
+.zero {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border: #fff 30px solid;
+    border-radius: 50%;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+    top: 0;
+}
+.zero.first {
+    z-index: 14;
+    left: 30px;
+}
+.zero.second {
+    z-index: 13;
+    left: 130px;
+}
