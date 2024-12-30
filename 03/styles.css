@@ -1,1 +1,112 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.frame {
+    height: 400px;
+    width: 400px;
+    background: linear-gradient(45deg, #1fe755, #13b5b5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background: #fff;
+    clip-path: circle(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .sky {
+        height: 140px;
+        width: 100%;
+        background: rgb(70, 233, 244);
+        position: absolute;
+        top: 0;
+        animation: sky-dark 4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ground {
+        height: 60px;
+        width: 100%;
+        background: #f0de75;
+        position: absolute;
+        bottom: 0;
+    }
+    .sun {
+        height: 40px;
+        width: 40px;
+        background: #f3d427;
+        border-radius: 50%;
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: sun-move 3s linear infinite;
+        transform-origin: 100% 600%;
+    }
+    .side-left {
+        clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+        height: 62px;
+        width: 124px;
+        background: #f8f8f5;
+        position: absolute;
+        bottom: 60px;
+        left: 38px;
+    }
+    .side-right {
+        clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+        height: 62px;
+        width: 62px;
+        background: #b1b1ae;
+        position: absolute;
+        bottom: 60px;
+        left: 100px;
+        z-index: 1;
+    }
+}
+
+@keyframes sun-move {
+    0% {
+        background: #f57209;
+        transform: rotate(-80deg);
+    }
+
+    30% {
+        background: #ffef00;
+        transform: rotate(-10deg);
+    }
+
+    135% {
+        background: #ffef00;
+    }
+
+    100% {
+        background: #d16309;
+        transform: rotate(80deg);
+    }
+}
+
+@keyframes sky-dark {
+    0% {
+        background: rgb(70, 233, 244);
+    }
+    100% {
+        background: rgb(0, 0, 0);
+    }
+}
